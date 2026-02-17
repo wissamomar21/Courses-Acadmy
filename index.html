@@ -1,0 +1,702 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Konned Academy - Master Digital Skills Online</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.10/dist/full.min.css" rel="stylesheet" type="text/css" />
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primaryBlue: "#3B82F6"
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+  </style>
+</head>
+
+<body class="bg-base-100">
+
+<div class="navbar bg-base-100 px-4 sm:px-6 lg:px-10 shadow-sm fixed top-0 left-0 w-full z-50">
+    <div class="navbar-start">
+      <div class="dropdown lg:hidden">
+        <label tabindex="0" class="btn btn-ghost btn-circle">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h7" />
+          </svg>
+        </label>
+        <ul tabindex="0" class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
+          <li><a class="text-primaryBlue font-medium">Home</a></li>
+          <li><a >All Courses</a></li>
+          <li><a>My Courses</a></li>
+          <li><a>About Us</a></li>
+        <li><a href="#contact" >Contact</a></li>
+        </ul>
+      </div>
+
+      <a href="index.html" class="flex items-center gap-2">
+        <div class="w-9 h-9 bg-primaryBlue text-white rounded-lg flex items-center justify-center font-bold text-lg">
+          K
+        </div>
+        <span class="font-semibold text-lg sm:text-xl">konned</span>
+      </a>
+    </div>
+
+    <div class="navbar-center hidden lg:flex">
+      <ul class="menu menu-horizontal px-1 gap-2 font-medium">
+        <li><a class="text-primaryBlue border-b-2 border-primaryBlue rounded-none">Home</a></li>
+        <li><a >All Courses</a></li>
+        <li><a>My Courses</a></li>
+        <li><a >About Us</a></li>
+        <li><a href="#contact" >Contact</a></li>
+      </ul>
+    </div>
+
+    <div class="navbar-end gap-2 sm:gap-4">
+      <input type="text" placeholder="Search courses..."
+        class="input input-bordered input-sm sm:input-md w-32 sm:w-48 md:w-64 rounded-full hidden sm:block" />
+
+      <div class="indicator">
+        <span class="indicator-item badge badge-error badge-xs"></span>
+        <button class="btn btn-ghost btn-circle btn-sm sm:btn-md">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9" />
+          </svg>
+        </button>
+      </div>
+<!-- 
+      <button class="w-8 h-8 sm:w-10 sm:h-10 rounded-full overflow-hidden ring-2 ring-offset-2 ring-primaryBlue">
+        <a href="profile.html">
+          <img src="images/profile-photo.png"
+              alt="User" class="w-full h-full object-cover">
+        </a>
+      </button>
+    </div>
+</div> -->
+      <a href="login.html" class="btn btn-primary btn-sm rounded-full">Sign In</a>
+    </div>
+</div>
+
+<div class="pt-20"></div>
+
+<section class="relative bg-gradient-to-br from-blue-50 via-white to-blue-50 px-4 sm:px-6 lg:px-10 py-20 lg:py-32">
+  <div class="max-w-7xl mx-auto">
+    <div class="grid lg:grid-cols-2 gap-12 items-center">
+
+      <div>
+        <div class="badge badge-primary badge-lg mb-6">Leading Learning Platform</div>
+
+        <h1 class="text-4xl lg:text-6xl font-bold mb-6 leading-tight">
+          Unlock Your Potential &
+          <span class="text-primaryBlue">Master New Skills</span>
+          with Expert Instructors
+        </h1>
+
+        <p class="text-lg lg:text-xl text-gray-600 mb-8 leading-relaxed">
+          Konned Academy offers thousands of courses across diverse fields taught by industry experts. Start your learning journey today and advance your career to new heights.
+        </p>
+
+        <div class="flex flex-wrap gap-4 mb-12">
+          <a href="courses.html" class="btn btn-primary btn-lg rounded-full px-8">
+            Explore Courses
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+            </svg>
+          </a>
+          <button class="btn btn-outline btn-lg rounded-full px-8">
+            Learn More
+          </button>
+        </div>
+
+        <div class="grid grid-cols-3 gap-6 lg:gap-8">
+          <div>
+            <div class="text-3xl lg:text-4xl font-bold text-primaryBlue mb-2">500+</div>
+            <div class="text-gray-600">Courses</div>
+          </div>
+          <div>
+            <div class="text-3xl lg:text-4xl font-bold text-primaryBlue mb-2">50K+</div>
+            <div class="text-gray-600">Active Learners</div>
+          </div>
+          <div>
+            <div class="text-3xl lg:text-4xl font-bold text-primaryBlue mb-2">200+</div>
+            <div class="text-gray-600">Expert Instructors</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="relative">
+        <div class="rounded-3xl overflow-hidden shadow-2xl">
+          <img src="https://images.pexels.com/photos/3861969/pexels-photo-3861969.jpeg?auto=compress&cs=tinysrgb&w=800"
+               alt="Students learning" class="w-full h-full object-cover">
+        </div>
+
+        <div class="absolute -bottom-6 -left-6 bg-white p-6 rounded-2xl shadow-xl hidden lg:block">
+          <div class="flex items-center gap-4">
+            <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center text-3xl">
+              🎓
+            </div>
+            <div>
+              <div class="text-2xl font-bold">98%</div>
+              <div class="text-sm text-gray-600">Student Satisfaction</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="absolute -top-6 -right-6 bg-white p-4 rounded-2xl shadow-xl hidden lg:block">
+          <div class="flex items-center gap-3">
+            <div class="avatar-group -space-x-4">
+              <div class="avatar">
+                <div class="w-10">
+                  <img src="https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg?auto=compress&cs=tinysrgb&w=100" />
+                </div>
+              </div>
+              <div class="avatar">
+                <div class="w-10">
+                  <img src="https://images.pexels.com/photos/1239291/pexels-photo-1239291.jpeg?auto=compress&cs=tinysrgb&w=100" />
+                </div>
+              </div>
+              <div class="avatar">
+                <div class="w-10">
+                  <img src="https://images.pexels.com/photos/415829/pexels-photo-415829.jpeg?auto=compress&cs=tinysrgb&w=100" />
+                </div>
+              </div>
+            </div>
+            <div class="text-sm font-semibold">+1000 New Students</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section class="px-4 sm:px-6 lg:px-10 py-20 bg-base-100">
+  <div class="max-w-7xl mx-auto">
+
+    <div class="text-center mb-16">
+      <div class="badge badge-outline badge-lg mb-4">Why Choose Us</div>
+      <h2 class="text-3xl lg:text-5xl font-bold mb-6">Why Konned Academy is Different</h2>
+      <p class="text-lg text-gray-600 max-w-3xl mx-auto">
+        We provide a comprehensive learning experience with premium content and tools designed to help you achieve your educational and career goals
+      </p>
+    </div>
+
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+      <div class="card bg-gradient-to-br from-blue-50 to-white shadow-xl hover:shadow-2xl transition rounded-3xl">
+        <div class="card-body p-8">
+          <div class="w-16 h-16 bg-primaryBlue text-white rounded-2xl flex items-center justify-center text-3xl mb-4">
+            🎯
+          </div>
+          <h3 class="text-2xl font-bold mb-3">Premium Content</h3>
+          <p class="text-gray-600 leading-relaxed">
+            All courses are carefully crafted by industry experts to ensure the best learning experience with up-to-date information and practical knowledge.
+          </p>
+        </div>
+      </div>
+
+      <div class="card bg-gradient-to-br from-green-50 to-white shadow-xl hover:shadow-2xl transition rounded-3xl">
+        <div class="card-body p-8">
+          <div class="w-16 h-16 bg-green-500 text-white rounded-2xl flex items-center justify-center text-3xl mb-4">
+            ⚡
+          </div>
+          <h3 class="text-2xl font-bold mb-3">Learn at Your Pace</h3>
+          <p class="text-gray-600 leading-relaxed">
+            Study anytime, anywhere at your own speed. Access all course materials on any device with lifetime access to all content you purchase.
+          </p>
+        </div>
+      </div>
+
+      <div class="card bg-gradient-to-br from-purple-50 to-white shadow-xl hover:shadow-2xl transition rounded-3xl">
+        <div class="card-body p-8">
+          <div class="w-16 h-16 bg-purple-500 text-white rounded-2xl flex items-center justify-center text-3xl mb-4">
+            👨‍🏫
+          </div>
+          <h3 class="text-2xl font-bold mb-3">Expert Instructors</h3>
+          <p class="text-gray-600 leading-relaxed">
+            Learn from industry professionals with years of practical experience and proven track records of success in their respective fields.
+          </p>
+        </div>
+      </div>
+
+      <div class="card bg-gradient-to-br from-orange-50 to-white shadow-xl hover:shadow-2xl transition rounded-3xl">
+        <div class="card-body p-8">
+          <div class="w-16 h-16 bg-orange-500 text-white rounded-2xl flex items-center justify-center text-3xl mb-4">
+            🏆
+          </div>
+          <h3 class="text-2xl font-bold mb-3">Verified Certificates</h3>
+          <p class="text-gray-600 leading-relaxed">
+            Earn recognized certificates upon course completion to boost your professional profile and increase your employment opportunities.
+          </p>
+        </div>
+      </div>
+
+      <div class="card bg-gradient-to-br from-red-50 to-white shadow-xl hover:shadow-2xl transition rounded-3xl">
+        <div class="card-body p-8">
+          <div class="w-16 h-16 bg-red-500 text-white rounded-2xl flex items-center justify-center text-3xl mb-4">
+            💬
+          </div>
+          <h3 class="text-2xl font-bold mb-3">24/7 Support</h3>
+          <p class="text-gray-600 leading-relaxed">
+            Our dedicated support team is always available to answer your questions. Join a thriving community of thousands of active learners.
+          </p>
+        </div>
+      </div>
+
+      <div class="card bg-gradient-to-br from-teal-50 to-white shadow-xl hover:shadow-2xl transition rounded-3xl">
+        <div class="card-body p-8">
+          <div class="w-16 h-16 bg-teal-500 text-white rounded-2xl flex items-center justify-center text-3xl mb-4">
+            📱
+          </div>
+          <h3 class="text-2xl font-bold mb-3">Mobile Learning</h3>
+          <p class="text-gray-600 leading-relaxed">
+            Download courses and learn on the go. Our mobile app lets you access your lessons offline and continue learning anytime, anywhere.
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section class="px-4 sm:px-6 lg:px-10 py-20 bg-base-200">
+  <div class="max-w-7xl mx-auto">
+
+    <div class="flex flex-col lg:flex-row justify-between items-center mb-12">
+      <div>
+        <div class="badge badge-primary badge-lg mb-4">Featured Courses</div>
+        <h2 class="text-3xl lg:text-5xl font-bold mb-4">Our Most Popular Courses</h2>
+        <p class="text-lg text-gray-600">Explore the most in-demand and successful courses</p>
+      </div>
+      <a href="courses.html" class="btn btn-outline btn-lg rounded-full mt-6 lg:mt-0">
+        View All Courses
+      </a>
+    </div>
+
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+      <!-- 1 -->
+      <div class="card bg-base-100 shadow-lg hover:shadow-2xl transition-all duration-300 ease-out rounded-3xl overflow-hidden hover:-translate-y-2 hover:scale-[1.02]">
+        <figure class="relative h-52 overflow-hidden">
+          <img src="https://images.unsplash.com/photo-1559027615-cd4628902d4a?q=80&w=600"
+               class="w-full h-full object-cover transition-transform duration-500 hover:scale-110"/>
+          <div class="absolute top-4 right-4 badge badge-success">Best Seller</div>
+          <div class="absolute bottom-4 left-4 badge badge-lg bg-white text-primaryBlue font-bold">$49</div>
+        </figure>
+        <div class="card-body p-6">
+<div class="flex gap-2 mb-2">
+  <div class="badge badge-outline">Creative Writing</div>
+  <div class="badge badge-success">Beginner</div>
+  <div class="badge badge-info">12 Hours</div>
+</div>
+          <h3 class="text-xl font-bold mb-2">UX Design Fundamentals</h3>
+          <p class="text-gray-600 text-sm mb-6">
+            Master user experience design and create intuitive digital products that users love
+          </p>
+          <a href="course-details.html" class="btn btn-primary w-full rounded-full hover:scale-105 transition duration-300">
+            Learn Now
+          </a>
+        </div>
+      </div>
+
+      <!-- 2 -->
+      <div class="card bg-base-100 shadow-lg hover:shadow-2xl transition-all duration-300 ease-out rounded-3xl overflow-hidden hover:-translate-y-2 hover:scale-[1.02]">
+        <figure class="relative h-52 overflow-hidden">
+          <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=600"
+               class="w-full h-full object-cover transition-transform duration-500 hover:scale-110"/>
+          <div class="absolute top-4 right-4 badge badge-primary">New</div>
+          <div class="absolute bottom-4 left-4 badge badge-lg bg-white text-primaryBlue font-bold">$79</div>
+        </figure>
+        <div class="card-body p-6">
+<div class="flex gap-2 mb-2">
+  <div class="badge badge-outline">Design</div>
+  <div class="badge badge-success">Beginner</div>
+  <div class="badge badge-info">15 Hours</div>
+</div>
+          <h3 class="text-xl font-bold mb-2">Full Stack Web Development</h3>
+          <p class="text-gray-600 text-sm mb-6">
+            Learn to build complete web applications using modern technologies and best practices
+          </p>
+          <a href="#" class="btn btn-primary w-full rounded-full hover:scale-105 transition duration-300">
+            Learn Now
+          </a>
+        </div>
+      </div>
+
+      <!-- 3 -->
+      <div class="card bg-base-100 shadow-lg hover:shadow-2xl transition-all duration-300 ease-out rounded-3xl overflow-hidden hover:-translate-y-2 hover:scale-[1.02]">
+        <figure class="relative h-52 overflow-hidden">
+          <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=600"
+               class="w-full h-full object-cover transition-transform duration-500 hover:scale-110"/>
+          <div class="absolute top-4 right-4 badge badge-warning">Top Rated</div>
+          <div class="absolute bottom-4 left-4 badge badge-lg bg-white text-primaryBlue font-bold">$59</div>
+        </figure>
+        <div class="card-body p-6">
+          <div class="badge badge-outline mb-2">Digital Marketing</div>
+          <h3 class="text-xl font-bold mb-2">Advanced Digital Marketing</h3>
+          <p class="text-gray-600 text-sm mb-6">
+            Master modern marketing strategies to grow your business in the digital world
+          </p>
+          <a href="#" class="btn btn-primary w-full rounded-full hover:scale-105 transition duration-300">
+            Learn Now
+          </a>
+        </div>
+      </div>
+
+      <!-- 4 -->
+      <div class="card bg-base-100 shadow-lg hover:shadow-2xl transition-all duration-300 ease-out rounded-3xl overflow-hidden hover:-translate-y-2 hover:scale-[1.02]">
+        <figure class="relative h-52 overflow-hidden">
+          <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?q=80&w=600"
+               class="w-full h-full object-cover transition-transform duration-500 hover:scale-110"/>
+          <div class="absolute bottom-4 left-4 badge badge-lg bg-white text-primaryBlue font-bold">$69</div>
+        </figure>
+        <div class="card-body p-6">
+<div class="flex gap-2 mb-2">
+  <div class="badge badge-outline">Creative Writing</div>
+  <div class="badge badge-success">Beginner</div>
+  <div class="badge badge-info">12 Hours</div>
+</div>
+          <h3 class="text-xl font-bold mb-2">Professional Project Management</h3>
+          <p class="text-gray-600 text-sm mb-6">
+            Learn to manage projects efficiently and deliver results on time and within budget
+          </p>
+          <a href="#" class="btn btn-primary w-full rounded-full hover:scale-105 transition duration-300">
+            Learn Now
+          </a>
+        </div>
+      </div>
+
+      <!-- 5 -->
+      <div class="card bg-base-100 shadow-lg hover:shadow-2xl transition-all duration-300 ease-out rounded-3xl overflow-hidden hover:-translate-y-2 hover:scale-[1.02]">
+        <figure class="relative h-52 overflow-hidden">
+          <img src="https://images.unsplash.com/photo-1558655146-9f40138edfeb?q=80&w=600"
+               class="w-full h-full object-cover transition-transform duration-500 hover:scale-110"/>
+          <div class="absolute bottom-4 left-4 badge badge-lg bg-white text-primaryBlue font-bold">$89</div>
+        </figure>
+        <div class="card-body p-6">
+          <div class="badge badge-outline mb-2">Photography</div>
+          <h3 class="text-xl font-bold mb-2">Professional Photography</h3>
+          <p class="text-gray-600 text-sm mb-6">
+            Master the art of photography from basics to advanced professional techniques
+          </p>
+          <a href="#" class="btn btn-primary w-full rounded-full hover:scale-105 transition duration-300">
+            Learn Now
+          </a>
+        </div>
+      </div>
+
+      <!-- 6 -->
+      <div class="card bg-base-100 shadow-lg hover:shadow-2xl transition-all duration-300 ease-out rounded-3xl overflow-hidden hover:-translate-y-2 hover:scale-[1.02]">
+        <figure class="relative h-52 overflow-hidden">
+          <img src="https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?q=80&w=600"
+               class="w-full h-full object-cover transition-transform duration-500 hover:scale-110"/>
+          <div class="absolute bottom-4 left-4 badge badge-lg bg-white text-primaryBlue font-bold">$45</div>
+        </figure>
+        <div class="card-body p-6">
+<div class="flex gap-2 mb-2">
+  <div class="badge badge-outline">Creative Writing</div>
+  <div class="badge badge-primary">Beginner</div>
+</div>
+          <h3 class="text-xl font-bold mb-2">Creative Content Writing</h3>
+          <p class="text-gray-600 text-sm mb-6">
+            Learn the art of writing compelling content that engages and influences readers
+          </p>
+          <a href="#" class="btn btn-primary w-full rounded-full hover:scale-105 transition duration-300">
+            Learn Now
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section class="px-4 sm:px-6 lg:px-10 py-20 bg-base-100">
+  <div class="max-w-7xl mx-auto">
+
+    <div class="text-center mb-16">
+      <div class="badge badge-outline badge-lg mb-4">Student Reviews</div>
+      <h2 class="text-3xl lg:text-5xl font-bold mb-6">What Our Students Say</h2>
+      <p class="text-lg text-gray-600 max-w-3xl mx-auto">
+        Thousands of students worldwide trust Konned Academy to help them advance their careers and achieve their goals
+      </p>
+    </div>
+
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+      <div class="card bg-base-200 shadow-xl rounded-3xl">
+        <div class="card-body p-8">
+          <div class="text-yellow-500 text-2xl mb-4">⭐⭐⭐⭐⭐</div>
+          <p class="text-gray-700 leading-relaxed mb-6">
+            Excellent course! The instructors are very professional and the content is well-structured. I learned so much and feel confident in my new skills. Highly recommended!
+          </p>
+          <div class="flex items-center gap-4">
+            <div class="avatar">
+              <div class="w-14 rounded-full ring ring-primaryBlue ring-offset-2">
+                <img src="https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg?auto=compress&cs=tinysrgb&w=100" />
+              </div>
+            </div>
+            <div>
+              <div class="font-bold">Sarah Johnson</div>
+              <div class="text-sm text-gray-500">UX Designer</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card bg-base-200 shadow-xl rounded-3xl">
+        <div class="card-body p-8">
+          <div class="text-yellow-500 text-2xl mb-4">⭐⭐⭐⭐⭐</div>
+          <p class="text-gray-700 leading-relaxed mb-6">
+            Best learning platform I've used! The content is comprehensive and the certificates are recognized. I successfully landed a new job using these skills. Highly satisfied!
+          </p>
+          <div class="flex items-center gap-4">
+            <div class="avatar">
+              <div class="w-14 rounded-full ring ring-primaryBlue ring-offset-2">
+                <img src="https://images.pexels.com/photos/1239291/pexels-photo-1239291.jpeg?auto=compress&cs=tinysrgb&w=100" />
+              </div>
+            </div>
+            <div>
+              <div class="font-bold">Mohamed Ali</div>
+              <div class="text-sm text-gray-500">Web Developer</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card bg-base-200 shadow-xl rounded-3xl">
+        <div class="card-body p-8">
+          <div class="text-yellow-500 text-2xl mb-4">⭐⭐⭐⭐⭐</div>
+          <p class="text-gray-700 leading-relaxed mb-6">
+            Very easy to understand and practical courses. The flexibility to learn at my own pace was crucial for me. The community support is fantastic too!
+          </p>
+          <div class="flex items-center gap-4">
+            <div class="avatar">
+              <div class="w-14 rounded-full ring ring-primaryBlue ring-offset-2">
+                <img src="https://images.pexels.com/photos/415829/pexels-photo-415829.jpeg?auto=compress&cs=tinysrgb&w=100" />
+              </div>
+            </div>
+            <div>
+              <div class="font-bold">Emily Chen</div>
+              <div class="text-sm text-gray-500">Digital Marketer</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card bg-base-200 shadow-xl rounded-3xl">
+        <div class="card-body p-8">
+          <div class="text-yellow-500 text-2xl mb-4">⭐⭐⭐⭐⭐</div>
+          <p class="text-gray-700 leading-relaxed mb-6">
+            The practical projects really helped solidify my learning. I now have a portfolio that showcases my work. This investment has already paid off multiple times!
+          </p>
+          <div class="flex items-center gap-4">
+            <div class="avatar">
+              <div class="w-14 rounded-full ring ring-primaryBlue ring-offset-2">
+                <img src="https://images.pexels.com/photos/1222271/pexels-photo-1222271.jpeg?auto=compress&cs=tinysrgb&w=100" />
+              </div>
+            </div>
+            <div>
+              <div class="font-bold">Ahmed Hassan</div>
+              <div class="text-sm text-gray-500">Graphic Designer</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card bg-base-200 shadow-xl rounded-3xl">
+        <div class="card-body p-8">
+          <div class="text-yellow-500 text-2xl mb-4">⭐⭐⭐⭐⭐</div>
+          <p class="text-gray-700 leading-relaxed mb-6">
+            Convenient and effective learning platform. The app works great and I can learn whenever I have free time. The support team is responsive and helpful!
+          </p>
+          <div class="flex items-center gap-4">
+            <div class="avatar">
+              <div class="w-14 rounded-full ring ring-primaryBlue ring-offset-2">
+                <img src="https://images.pexels.com/photos/1181686/pexels-photo-1181686.jpeg?auto=compress&cs=tinysrgb&w=100" />
+              </div>
+            </div>
+            <div>
+              <div class="font-bold">Layla Karim</div>
+              <div class="text-sm text-gray-500">Project Manager</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card bg-base-200 shadow-xl rounded-3xl">
+        <div class="card-body p-8">
+          <div class="text-yellow-500 text-2xl mb-4">⭐⭐⭐⭐⭐</div>
+          <p class="text-gray-700 leading-relaxed mb-6">
+            Amazing value for money! I got far more knowledge and skills than I expected. The lifetime access means I can always come back to refresh my learning!
+          </p>
+          <div class="flex items-center gap-4">
+            <div class="avatar">
+              <div class="w-14 rounded-full ring ring-primaryBlue ring-offset-2">
+                <img src="https://images.pexels.com/photos/1181690/pexels-photo-1181690.jpeg?auto=compress&cs=tinysrgb&w=100" />
+              </div>
+            </div>
+            <div>
+              <div class="font-bold">Khalid Noor</div>
+              <div class="text-sm text-gray-500">Photographer</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section class="px-4 sm:px-6 lg:px-10 py-20 bg-gradient-to-br from-primaryBlue to-blue-600 text-white">
+  <div class="max-w-5xl mx-auto text-center">
+    <h2 class="text-3xl lg:text-5xl font-bold mb-6">Ready to Start Learning?</h2>
+    <p class="text-xl lg:text-2xl mb-10 opacity-90">
+      Join over 50,000 students who are transforming their careers with Konned Academy
+    </p>
+
+    <div class="flex flex-wrap justify-center gap-4">
+      <a href="login.html" class="btn btn-lg bg-white text-primaryBlue hover:bg-gray-100 border-0 rounded-full px-8">
+        Start Learning Free
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+        </svg>
+      </a>
+      <button class="btn btn-lg btn-outline border-white text-white hover:bg-white hover:text-primaryBlue rounded-full px-8">
+        Contact Us
+      </button>
+    </div>
+
+    <div class="mt-12 flex flex-wrap justify-center items-center gap-8 opacity-80">
+      <div class="flex items-center gap-2">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+        </svg>
+        <span>No credit card required</span>
+      </div>
+      <div class="flex items-center gap-2">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+        </svg>
+        <span>30-day Money Back Guarantee</span>
+      </div>
+      <div class="flex items-center gap-2">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+        </svg>
+        <span>Lifetime Access</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer id="contact" class="bg-gradient-to-r from-slate-900 to-slate-800 text-gray-300 px-4 sm:px-6 lg:px-10 pt-16 lg:pt-20 pb-8">
+  <div class="max-w-7xl mx-auto">
+
+    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-10">
+
+      <div>
+        <div class="flex items-center gap-3 mb-6">
+          <div class="w-10 h-10 bg-blue-600 rounded-lg flex items-center justify-center text-white font-bold">
+            K
+          </div>
+          <span class="text-xl font-semibold text-white">konned</span>
+        </div>
+
+        <p class="text-gray-400 leading-relaxed mb-6">
+          We provide high-quality online courses to help you grow your skills and advance your career. Learn from top instructors worldwide.
+        </p>
+
+        <div class="flex gap-3">
+          <a class="btn btn-circle btn-sm bg-slate-700 border-0 hover:bg-primaryBlue">
+            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+            </svg>
+          </a>
+          <a class="btn btn-circle btn-sm bg-slate-700 border-0 hover:bg-primaryBlue">
+            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417a9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/>
+            </svg>
+          </a>
+          <a class="btn btn-circle btn-sm bg-slate-700 border-0 hover:bg-primaryBlue">
+            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+            </svg>
+          </a>
+          <a class="btn btn-circle btn-sm bg-slate-700 border-0 hover:bg-primaryBlue">
+            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+
+      <div>
+        <h4 class="text-white font-semibold mb-6 text-lg">Quick Links</h4>
+        <ul class="space-y-3">
+          <li><a href="index.html" class="hover:text-white cursor-pointer transition">Home</a></li>
+          <li><a href="courses.html" class="hover:text-white cursor-pointer transition">All Courses</a></li>
+          <li><a class="hover:text-white cursor-pointer transition">My Courses</a></li>
+          <li><a class="hover:text-white cursor-pointer transition">About Us</a></li>
+          <li><a class="hover:text-white cursor-pointer transition">Contact</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4 class="text-white font-semibold mb-6 text-lg">Categories</h4>
+        <ul class="space-y-3">
+          <li class="hover:text-white cursor-pointer transition">Design</li>
+          <li class="hover:text-white cursor-pointer transition">Programming</li>
+          <li class="hover:text-white cursor-pointer transition">Marketing</li>
+          <li class="hover:text-white cursor-pointer transition">Business</li>
+          <li class="hover:text-white cursor-pointer transition">Photography</li>
+        </ul>
+      </div>
+
+      <div>
+        <h4 class="text-white font-semibold mb-6 text-lg">Contact Info</h4>
+        <ul class="space-y-4">
+          <li class="flex items-center gap-3">
+            <span>📧</span>
+            <span>support@konned.com</span>
+          </li>
+          <li class="flex items-center gap-3">
+            <span>📞</span>
+            <span>+1 (555) 123-4567</span>
+          </li>
+          <li class="flex items-center gap-3">
+            <span>📍</span>
+            <span>123 Learning Street, Tech City</span>
+          </li>
+        </ul>
+      </div>
+
+    </div>
+
+    <div class="border-t border-slate-700 mt-16 pt-8 flex flex-col md:flex-row justify-between items-center text-sm text-gray-400 gap-4">
+      <p>© 2026 Host-Cube. All rights reserved.</p>
+
+      <div class="flex gap-6">
+        <a class="hover:text-white cursor-pointer transition">Privacy Policy</a>
+        <a class="hover:text-white cursor-pointer transition">Terms of Service</a>
+        <a class="hover:text-white cursor-pointer transition">Cookie Policy</a>
+      </div>
+    </div>
+
+  </div>
+</footer>
+
+</body>
+</html>

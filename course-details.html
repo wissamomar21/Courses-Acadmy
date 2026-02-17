@@ -1,0 +1,764 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="light">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>UX Design Fundamentals - Konned</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.10/dist/full.min.css" rel="stylesheet" type="text/css" />
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primaryBlue: "#3B82F6"
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    body {
+      font-family: system-ui, -apple-system, sans-serif;
+    }
+  </style>
+</head>
+
+<body class="bg-base-100">
+
+  <div class="navbar bg-base-100 px-4 sm:px-6 lg:px-10 shadow-sm fixed top-0 left-0 w-full z-50">
+    <div class="navbar-start">
+      <div class="dropdown lg:hidden">
+        <label tabindex="0" class="btn btn-ghost btn-circle">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h7" />
+          </svg>
+        </label>
+        <ul tabindex="0" class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
+          <li><a href="index.html">Home</a></li>
+          <li><a class="text-primaryBlue font-medium">All Courses</a></li>
+          <li><a>My Courses</a></li>
+          <li><a>About Us</a></li>
+          <li><a>Contact</a></li>
+        </ul>
+      </div>
+
+      <a href="index.html" class="flex items-center gap-2">
+        <div class="w-9 h-9 bg-primaryBlue text-white rounded-lg flex items-center justify-center font-bold text-lg">
+          K
+        </div>
+        <span class="font-semibold text-lg sm:text-xl">konned</span>
+      </a>
+    </div>
+
+    <div class="navbar-center hidden lg:flex">
+      <ul class="menu menu-horizontal px-1 gap-2 font-medium">
+        <li><a href="index.html">Home</a></li>
+        <li><a class="text-primaryBlue border-b-2 border-primaryBlue rounded-none">All Courses</a></li>
+        <li><a>My Courses</a></li>
+        <li><a>About Us</a></li>
+        <li><a>Contact</a></li>
+      </ul>
+    </div>
+
+    <div class="navbar-end gap-2 sm:gap-4">
+      <input type="text" placeholder="Search courses..."
+        class="input input-bordered input-sm sm:input-md w-32 sm:w-48 md:w-64 rounded-full hidden sm:block" />
+
+      <div class="indicator">
+        <span class="indicator-item badge badge-error badge-xs"></span>
+        <button class="btn btn-ghost btn-circle btn-sm sm:btn-md">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9" />
+          </svg>
+        </button>
+      </div>
+
+      <button class="w-8 h-8 sm:w-10 sm:h-10 rounded-full overflow-hidden ring-2 ring-offset-2 ring-primaryBlue">
+        <a href="profile.html">
+          <img src="images/profile-photo.png" alt="User" class="w-full h-full object-cover">
+        </a>
+      </button>
+    </div>
+  </div>
+  <div class="pt-20"></div>
+
+  <section class="px-4 sm:px-6 lg:px-10 py-12 bg-base-100">
+    <div class="max-w-7xl mx-auto">
+
+      <div class="breadcrumbs text-sm mb-6">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="all-courses.html">All Courses</a></li>
+          <li>UX Design Fundamentals</li>
+        </ul>
+      </div>
+
+      <div class="grid lg:grid-cols-3 gap-8">
+
+        <div class="lg:col-span-2">
+
+          <div class="mb-6">
+            <div class="flex flex-wrap gap-2 mb-4">
+              <div class="badge badge-outline badge-lg">Design</div>
+              <div class="badge badge-success badge-lg">Best Seller</div>
+            </div>
+
+            <h1 class="text-3xl lg:text-4xl font-bold mb-4">UX Design Fundamentals</h1>
+
+            <p class="text-gray-600 text-lg mb-6">
+              Master the core principles of user experience design and create intuitive, user-centered digital products
+              that delight your users and drive business results.
+            </p>
+
+            <div class="bg-base-100 rounded-2xl shadow-xl overflow-hidden mb-8">
+              <div
+                class="aspect-video bg-gradient-to-br from-blue-500 to-blue-700 flex items-center justify-center relative">
+                <div class="text-center text-white">
+                  <button class="btn btn-circle btn-lg bg-white text-primaryBlue hover:bg-gray-100 border-0 mb-4">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24" class="w-8 h-8">
+                      <path d="M8 5v14l11-7z" />
+                    </svg>
+                  </button>
+                  <p class="text-sm">Play Course Preview</p>
+                </div>
+                <img src="https://images.unsplash.com/photo-1559027615-cd4628902d4a?q=80&w=1200"
+                  class="absolute inset-0 w-full h-full object-cover opacity-40" alt="Course preview" />
+              </div>
+            </div>
+
+            <div class="mb-8">
+              <h2 class="text-2xl font-bold mb-6">What You'll Learn</h2>
+              <div class="grid sm:grid-cols-2 gap-4">
+                <div class="flex gap-3">
+                  <div class="text-green-500 text-xl">✓</div>
+                  <p>Understand core UX design principles and methodologies</p>
+                </div>
+                <div class="flex gap-3">
+                  <div class="text-green-500 text-xl">✓</div>
+                  <p>Conduct user research and create user personas</p>
+                </div>
+                <div class="flex gap-3">
+                  <div class="text-green-500 text-xl">✓</div>
+                  <p>Design wireframes and interactive prototypes</p>
+                </div>
+                <div class="flex gap-3">
+                  <div class="text-green-500 text-xl">✓</div>
+                  <p>Perform usability testing and analyze results</p>
+                </div>
+                <div class="flex gap-3">
+                  <div class="text-green-500 text-xl">✓</div>
+                  <p>Create information architecture and user flows</p>
+                </div>
+                <div class="flex gap-3">
+                  <div class="text-green-500 text-xl">✓</div>
+                  <p>Master design tools like Figma and Adobe XD</p>
+                </div>
+                <div class="flex gap-3">
+                  <div class="text-green-500 text-xl">✓</div>
+                  <p>Build a professional UX design portfolio</p>
+                </div>
+                <div class="flex gap-3">
+                  <div class="text-green-500 text-xl">✓</div>
+                  <p>Apply accessibility best practices in your designs</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="mb-8">
+              <h2 class="text-2xl font-bold mb-6">Course Content</h2>
+              <div class="text-sm text-gray-600 mb-4">8 sections • 45 lessons • 8h 30m total length</div>
+
+              <div class="space-y-3">
+
+                <div class="collapse collapse-arrow bg-base-200 rounded-xl">
+                  <input type="radio" name="course-accordion" checked="checked" />
+                  <div class="collapse-title text-lg font-semibold">
+                    <div class="flex justify-between items-center pr-4">
+                      <span>Section 1: Introduction to UX Design</span>
+                      <span class="text-sm text-gray-500">5 lessons • 45m</span>
+                    </div>
+                  </div>
+                  <div class="collapse-content">
+                    <div class="space-y-2 pt-2">
+                      <div class="flex items-center justify-between p-3 hover:bg-base-100 rounded-lg cursor-pointer">
+                        <div class="flex items-center gap-3">
+                          <span class="text-primaryBlue">▶</span>
+                          <span>What is UX Design?</span>
+                        </div>
+                        <span class="text-sm text-gray-500">8:30</span>
+                      </div>
+                      <div class="flex items-center justify-between p-3 hover:bg-base-100 rounded-lg cursor-pointer">
+                        <div class="flex items-center gap-3">
+                          <span class="text-primaryBlue">▶</span>
+                          <span>UX Design Process Overview</span>
+                        </div>
+                        <span class="text-sm text-gray-500">12:15</span>
+                      </div>
+                      <div class="flex items-center justify-between p-3 hover:bg-base-100 rounded-lg cursor-pointer">
+                        <div class="flex items-center gap-3">
+                          <span>🔒</span>
+                          <span class="text-gray-400">The Role of a UX Designer</span>
+                        </div>
+                        <span class="text-sm text-gray-500">10:20</span>
+                      </div>
+                      <div class="flex items-center justify-between p-3 hover:bg-base-100 rounded-lg cursor-pointer">
+                        <div class="flex items-center gap-3">
+                          <span>🔒</span>
+                          <span class="text-gray-400">UX vs UI Design</span>
+                        </div>
+                        <span class="text-sm text-gray-500">9:45</span>
+                      </div>
+                      <div class="flex items-center justify-between p-3 hover:bg-base-100 rounded-lg cursor-pointer">
+                        <div class="flex items-center gap-3">
+                          <span>📄</span>
+                          <span class="text-gray-400">Getting Started with Design Tools</span>
+                        </div>
+                        <span class="text-sm text-gray-500">4:10</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="collapse collapse-arrow bg-base-200 rounded-xl">
+                  <input type="radio" name="course-accordion" />
+                  <div class="collapse-title text-lg font-semibold">
+                    <div class="flex justify-between items-center pr-4">
+                      <span>Section 2: User Research Methods</span>
+                      <span class="text-sm text-gray-500">6 lessons • 1h 10m</span>
+                    </div>
+                  </div>
+                  <div class="collapse-content">
+                    <div class="space-y-2 pt-2">
+                      <div class="flex items-center justify-between p-3 hover:bg-base-100 rounded-lg">
+                        <div class="flex items-center gap-3">
+                          <span>🔒</span>
+                          <span class="text-gray-400">Understanding Your Users</span>
+                        </div>
+                        <span class="text-sm text-gray-500">11:30</span>
+                      </div>
+                      <div class="flex items-center justify-between p-3 hover:bg-base-100 rounded-lg">
+                        <div class="flex items-center gap-3">
+                          <span>🔒</span>
+                          <span class="text-gray-400">Conducting User Interviews</span>
+                        </div>
+                        <span class="text-sm text-gray-500">15:20</span>
+                      </div>
+                      <div class="flex items-center justify-between p-3 hover:bg-base-100 rounded-lg">
+                        <div class="flex items-center gap-3">
+                          <span>🔒</span>
+                          <span class="text-gray-400">Creating User Personas</span>
+                        </div>
+                        <span class="text-sm text-gray-500">13:45</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="collapse collapse-arrow bg-base-200 rounded-xl">
+                  <input type="radio" name="course-accordion" />
+                  <div class="collapse-title text-lg font-semibold">
+                    <div class="flex justify-between items-center pr-4">
+                      <span>Section 3: Information Architecture</span>
+                      <span class="text-sm text-gray-500">5 lessons • 55m</span>
+                    </div>
+                  </div>
+                  <div class="collapse-content">
+                    <p class="text-gray-500 pt-2">Content coming soon...</p>
+                  </div>
+                </div>
+
+                <div class="collapse collapse-arrow bg-base-200 rounded-xl">
+                  <input type="radio" name="course-accordion" />
+                  <div class="collapse-title text-lg font-semibold">
+                    <div class="flex justify-between items-center pr-4">
+                      <span>Section 4: Wireframing & Prototyping</span>
+                      <span class="text-sm text-gray-500">8 lessons • 1h 40m</span>
+                    </div>
+                  </div>
+                  <div class="collapse-content">
+                    <p class="text-gray-500 pt-2">Content coming soon...</p>
+                  </div>
+                </div>
+
+                <div class="collapse collapse-arrow bg-base-200 rounded-xl">
+                  <input type="radio" name="course-accordion" />
+                  <div class="collapse-title text-lg font-semibold">
+                    <div class="flex justify-between items-center pr-4">
+                      <span>Section 5: Visual Design Principles</span>
+                      <span class="text-sm text-gray-500">7 lessons • 1h 20m</span>
+                    </div>
+                  </div>
+                  <div class="collapse-content">
+                    <p class="text-gray-500 pt-2">Content coming soon...</p>
+                  </div>
+                </div>
+
+                <div class="collapse collapse-arrow bg-base-200 rounded-xl">
+                  <input type="radio" name="course-accordion" />
+                  <div class="collapse-title text-lg font-semibold">
+                    <div class="flex justify-between items-center pr-4">
+                      <span>Section 6: Usability Testing</span>
+                      <span class="text-sm text-gray-500">6 lessons • 1h 5m</span>
+                    </div>
+                  </div>
+                  <div class="collapse-content">
+                    <p class="text-gray-500 pt-2">Content coming soon...</p>
+                  </div>
+                </div>
+
+                <div class="collapse collapse-arrow bg-base-200 rounded-xl">
+                  <input type="radio" name="course-accordion" />
+                  <div class="collapse-title text-lg font-semibold">
+                    <div class="flex justify-between items-center pr-4">
+                      <span>Section 7: Design Systems & Accessibility</span>
+                      <span class="text-sm text-gray-500">5 lessons • 50m</span>
+                    </div>
+                  </div>
+                  <div class="collapse-content">
+                    <p class="text-gray-500 pt-2">Content coming soon...</p>
+                  </div>
+                </div>
+
+                <div class="collapse collapse-arrow bg-base-200 rounded-xl">
+                  <input type="radio" name="course-accordion" />
+                  <div class="collapse-title text-lg font-semibold">
+                    <div class="flex justify-between items-center pr-4">
+                      <span>Section 8: Portfolio & Career Development</span>
+                      <span class="text-sm text-gray-500">3 lessons • 35m</span>
+                    </div>
+                  </div>
+                  <div class="collapse-content">
+                    <p class="text-gray-500 pt-2">Content coming soon...</p>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+
+            <div class="mb-8">
+              <h2 class="text-2xl font-bold mb-6">Requirements</h2>
+              <ul class="space-y-3">
+                <li class="flex gap-3">
+                  <span class="text-gray-500">•</span>
+                  <span>No prior design experience required</span>
+                </li>
+                <li class="flex gap-3">
+                  <span class="text-gray-500">•</span>
+                  <span>A computer with internet connection</span>
+                </li>
+                <li class="flex gap-3">
+                  <span class="text-gray-500">•</span>
+                  <span>Willingness to learn and practice design skills</span>
+                </li>
+                <li class="flex gap-3">
+                  <span class="text-gray-500">•</span>
+                  <span>Basic computer skills (browsing, file management)</span>
+                </li>
+              </ul>
+            </div>
+
+            <div class="mb-8">
+              <h2 class="text-2xl font-bold mb-6">Description</h2>
+              <div class="space-y-4 text-gray-700 leading-relaxed">
+                <p>
+                  Welcome to the UX Design Fundamentals course! This comprehensive program is designed to take you from
+                  beginner to confident UX designer, ready to create user-centered digital experiences that truly make a
+                  difference.
+                </p>
+                <p>
+                  Throughout this course, you'll learn the entire UX design process from start to finish. We'll cover
+                  everything from understanding user needs through research, to creating wireframes and prototypes, to
+                  conducting usability tests that validate your designs.
+                </p>
+                <p>
+                  What makes this course unique is our focus on practical, hands-on learning. You won't just watch
+                  videos - you'll complete real design projects that you can add to your portfolio. Each module includes
+                  exercises, case studies, and feedback opportunities to ensure you're mastering the material.
+                </p>
+                <p>
+                  By the end of this course, you'll have a solid foundation in UX design principles, experience with
+                  industry-standard tools, and a portfolio of projects that demonstrate your skills to potential
+                  employers or clients.
+                </p>
+              </div>
+            </div>
+
+            <div>
+              <h2 class="text-2xl font-bold mb-6">Student Reviews</h2>
+
+              <div class="grid sm:grid-cols-3 gap-4 mb-8">
+                <div class="card bg-base-200 p-6 text-center">
+                  <div class="text-4xl font-bold mb-2">4.8</div>
+                  <div class="text-yellow-500 mb-2">⭐⭐⭐⭐⭐</div>
+                  <div class="text-sm text-gray-500">Course Rating</div>
+                </div>
+                <div class="col-span-2">
+                  <div class="space-y-2">
+                    <div class="flex items-center gap-3">
+                      <span class="text-yellow-500 text-sm">⭐⭐⭐⭐⭐</span>
+                      <progress class="progress progress-primary w-full" value="85" max="100"></progress>
+                      <span class="text-sm text-gray-500">85%</span>
+                    </div>
+                    <div class="flex items-center gap-3">
+                      <span class="text-yellow-500 text-sm">⭐⭐⭐⭐</span>
+                      <progress class="progress progress-primary w-full" value="12" max="100"></progress>
+                      <span class="text-sm text-gray-500">12%</span>
+                    </div>
+                    <div class="flex items-center gap-3">
+                      <span class="text-yellow-500 text-sm">⭐⭐⭐</span>
+                      <progress class="progress progress-primary w-full" value="2" max="100"></progress>
+                      <span class="text-sm text-gray-500">2%</span>
+                    </div>
+                    <div class="flex items-center gap-3">
+                      <span class="text-yellow-500 text-sm">⭐⭐</span>
+                      <progress class="progress progress-primary w-full" value="1" max="100"></progress>
+                      <span class="text-sm text-gray-500">1%</span>
+                    </div>
+                    <div class="flex items-center gap-3">
+                      <span class="text-yellow-500 text-sm">⭐</span>
+                      <progress class="progress progress-primary w-full" value="0" max="100"></progress>
+                      <span class="text-sm text-gray-500">0%</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="space-y-6">
+                <div class="card bg-base-200 p-6">
+                  <div class="flex gap-4">
+                    <div class="avatar">
+                      <div class="w-12 h-12 rounded-full">
+                        <img
+                          src="https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg?auto=compress&cs=tinysrgb&w=100" />
+                      </div>
+                    </div>
+                    <div class="flex-1">
+                      <div class="flex items-center justify-between mb-2">
+                        <div>
+                          <div class="font-semibold">Sarah Johnson</div>
+                          <div class="text-sm text-gray-500">2 days ago</div>
+                        </div>
+                        <div class="text-yellow-500">⭐⭐⭐⭐⭐</div>
+                      </div>
+                      <p class="text-gray-700">
+                        This course is absolutely fantastic! Ahmed's teaching style is clear and engaging. I've learned
+                        so much about UX design and feel confident starting my career in this field. Highly recommended!
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="card bg-base-200 p-6">
+                  <div class="flex gap-4">
+                    <div class="avatar">
+                      <div class="w-12 h-12 rounded-full">
+                        <img
+                          src="https://images.pexels.com/photos/1239291/pexels-photo-1239291.jpeg?auto=compress&cs=tinysrgb&w=100" />
+                      </div>
+                    </div>
+                    <div class="flex-1">
+                      <div class="flex items-center justify-between mb-2">
+                        <div>
+                          <div class="font-semibold">Mohamed Ali</div>
+                          <div class="text-sm text-gray-500">1 week ago</div>
+                        </div>
+                        <div class="text-yellow-500">⭐⭐⭐⭐⭐</div>
+                      </div>
+                      <p class="text-gray-700">
+                        Great course for beginners! The content is well-structured and easy to follow. The hands-on
+                        projects really helped solidify my understanding of UX principles.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="card bg-base-200 p-6">
+                  <div class="flex gap-4">
+                    <div class="avatar">
+                      <div class="w-12 h-12 rounded-full">
+                        <img
+                          src="https://images.pexels.com/photos/415829/pexels-photo-415829.jpeg?auto=compress&cs=tinysrgb&w=100" />
+                      </div>
+                    </div>
+                    <div class="flex-1">
+                      <div class="flex items-center justify-between mb-2">
+                        <div>
+                          <div class="font-semibold">Emily Chen</div>
+                          <div class="text-sm text-gray-500">2 weeks ago</div>
+                        </div>
+                        <div class="text-yellow-500">⭐⭐⭐⭐</div>
+                      </div>
+                      <p class="text-gray-700">
+                        Very informative course with practical examples. The only thing I'd improve is adding more
+                        advanced topics, but overall it's excellent for learning the fundamentals.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="lg:col-span-1">
+            <div class="sticky top-24">
+              <div class="card bg-base-100 shadow-2xl rounded-2xl overflow-hidden">
+                <figure class="relative">
+                  <img src="https://images.unsplash.com/photo-1559027615-cd4628902d4a?q=80&w=600"
+                    class="h-48 w-full object-cover" />
+                  <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+                </figure>
+
+                <div class="p-6">
+                  <div class="mb-6">
+                    <div class="flex items-baseline gap-2 mb-2">
+                      <span class="text-4xl font-bold text-primaryBlue">$49</span>
+                      <span class="text-xl text-gray-400 line-through">$99</span>
+                    </div>
+                    <div class="badge badge-error">50% OFF - Limited Time</div>
+                  </div>
+
+                  <button class="btn btn-primary w-full mb-3 rounded-xl text-lg h-14">
+                    Enroll Now
+                  </button>
+                  <button class="btn btn-outline w-full mb-4 rounded-xl">
+                    Add to Wishlist ♡
+                  </button>
+
+                  <div class="text-center text-sm text-gray-500 mb-4">
+                    30-Day Money-Back Guarantee
+                  </div>
+
+                  <div class="divider"></div>
+
+                  <div class="space-y-4">
+                    <div class="flex items-center gap-3">
+                      <span class="text-primaryBlue">⏱</span>
+                      <div>
+                        <div class="font-medium">8.5 hours</div>
+                        <div class="text-sm text-gray-500">On-demand video</div>
+                      </div>
+                    </div>
+
+                    <div class="flex items-center gap-3">
+                      <span class="text-primaryBlue">📚</span>
+                      <div>
+                        <div class="font-medium">45 lessons</div>
+                        <div class="text-sm text-gray-500">Complete curriculum</div>
+                      </div>
+                    </div>
+
+                    <div class="flex items-center gap-3">
+                      <span class="text-primaryBlue">📄</span>
+                      <div>
+                        <div class="font-medium">12 resources</div>
+                        <div class="text-sm text-gray-500">Downloadable files</div>
+                      </div>
+                    </div>
+
+                    <div class="flex items-center gap-3">
+                      <span class="text-primaryBlue">📱</span>
+                      <div>
+                        <div class="font-medium">Mobile access</div>
+                        <div class="text-sm text-gray-500">Learn on the go</div>
+                      </div>
+                    </div>
+
+                    <div class="flex items-center gap-3">
+                      <span class="text-primaryBlue">🏆</span>
+                      <div>
+                        <div class="font-medium">Certificate</div>
+                        <div class="text-sm text-gray-500">Upon completion</div>
+                      </div>
+                    </div>
+
+                    <div class="flex items-center gap-3">
+                      <span class="text-primaryBlue">♾️</span>
+                      <div>
+                        <div class="font-medium">Lifetime access</div>
+                        <div class="text-sm text-gray-500">Unlimited rewatches</div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="divider"></div>
+
+                  <div>
+                    <h4 class="font-semibold mb-3">Share this course</h4>
+                    <div class="flex gap-2">
+                      <button class="btn btn-circle btn-outline btn-sm">
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                          <path
+                            d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
+                        </svg>
+                      </button>
+                      <button class="btn btn-circle btn-outline btn-sm">
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                          <path
+                            d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z" />
+                        </svg>
+                      </button>
+                      <button class="btn btn-circle btn-outline btn-sm">
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                          <path
+                            d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+                        </svg>
+                      </button>
+                      <button class="btn btn-circle btn-outline btn-sm">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.368 2.684 3 3 0 00-5.368-2.684z" />
+                        </svg>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+  </section>
+
+  <section class="px-4 sm:px-6 lg:px-10 py-16 bg-base-200">
+    <div class="max-w-7xl mx-auto">
+      <h2 class="text-3xl font-bold mb-8">More Courses You Might Like</h2>
+
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+
+      <div class="card bg-base-100 shadow-lg hover:shadow-2xl transition-all duration-300 ease-out rounded-3xl overflow-hidden hover:-translate-y-2 hover:scale-[1.02]">
+          <figure class="relative">
+            <img src="https://images.unsplash.com/photo-1587614382346-4ec70e388b28?q=80&w=600"
+              class="h-40 w-full object-cover" />
+            <div class="absolute top-3 right-3 badge badge-primary">$59</div>
+          </figure>
+          <div class="card-body p-4">
+            <h3 class="font-bold">Mobile UX Design</h3>
+            <a href="course-details.html" class="btn btn-primary w-full rounded-full  transition duration-200 ease-out mt-4">
+            Learn Now
+          </a>
+          </div>
+        </div>
+
+      <div class="card bg-base-100 shadow-lg hover:shadow-2xl transition-all duration-300 ease-out rounded-3xl overflow-hidden hover:-translate-y-2 hover:scale-[1.02]">
+          <figure class="relative">
+            <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=600"
+              class="h-40 w-full object-cover" />
+            <div class="absolute top-3 right-3 badge badge-primary">$69</div>
+          </figure>
+          <div class="card-body p-4">
+            <h3 class="font-bold">Material Design for Android</h3>
+            <a href="course-details.html" class="btn btn-primary w-full rounded-full  transition duration-200 ease-out mt-4">
+            Learn Now
+          </a>
+          </div>
+        </div>
+
+      <div class="card bg-base-100 shadow-lg hover:shadow-2xl transition-all duration-300 ease-out rounded-3xl overflow-hidden hover:-translate-y-2 hover:scale-[1.02]">
+          <figure class="relative">
+            <img src="https://images.unsplash.com/photo-1509395062183-67c5ad6faff9?q=80&w=600"
+              class="h-40 w-full object-cover" />
+            <div class="absolute top-3 right-3 badge badge-primary">$55</div>
+          </figure>
+          <div class="card-body p-4">
+            <h3 class="font-bold">UI Design Advanced</h3>
+            <a href="course-details.html" class="btn btn-primary w-full rounded-full  transition duration-200 ease-out mt-4">
+            Learn Now
+          </a>
+          </div>
+        </div>
+
+      <div class="card bg-base-100 shadow-lg hover:shadow-2xl transition-all duration-300 ease-out rounded-3xl overflow-hidden hover:-translate-y-2 hover:scale-[1.02]">
+          <figure class="relative">
+            <img src="https://images.unsplash.com/photo-1561070791-2526d30994b5?q=80&w=600"
+              class="h-40 w-full object-cover" />
+            <div class="absolute top-3 right-3 badge badge-primary">$45</div>
+          </figure>
+          <div class="card-body p-4">
+            <h3 class="font-bold">Design Thinking Workshop</h3>
+            <a href="course-details.html" class="btn btn-primary w-full rounded-full  transition duration-200 ease-out mt-4">
+            Learn Now
+          </a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <footer class="bg-gradient-to-r from-slate-900 to-slate-800 text-gray-300 px-4 sm:px-6 lg:px-10 pt-16 lg:pt-20 pb-8">
+    <div class="max-w-7xl mx-auto">
+
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-10">
+
+        <div>
+          <div class="flex items-center gap-3 mb-6">
+            <div class="w-10 h-10 bg-blue-600 rounded-lg flex items-center justify-center text-white font-bold">
+              K
+            </div>
+            <span class="text-xl font-semibold text-white">konned</span>
+          </div>
+
+          <p class="text-gray-400 leading-relaxed">
+            We provide high-quality online courses to help you grow your skills and advance your career.
+            Learn from top instructors worldwide.
+          </p>
+        </div>
+
+        <div>
+          <h4 class="text-white font-semibold mb-6 text-lg">Quick Links</h4>
+          <ul class="space-y-3">
+            <li><a href="index.html" class="hover:text-white cursor-pointer transition">Home</a></li>
+            <li><a href="all-courses.html" class="hover:text-white cursor-pointer transition">All Courses</a></li>
+            <li><a class="hover:text-white cursor-pointer transition">My Courses</a></li>
+            <li><a class="hover:text-white cursor-pointer transition">About Us</a></li>
+            <li><a class="hover:text-white cursor-pointer transition">Contact</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="text-white font-semibold mb-6 text-lg">Categories</h4>
+          <ul class="space-y-3">
+            <li class="hover:text-white cursor-pointer transition">Design</li>
+            <li class="hover:text-white cursor-pointer transition">Programming</li>
+            <li class="hover:text-white cursor-pointer transition">Marketing</li>
+            <li class="hover:text-white cursor-pointer transition">Business</li>
+            <li class="hover:text-white cursor-pointer transition">Photography</li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="text-white font-semibold mb-6 text-lg">Contact Info</h4>
+          <ul class="space-y-4">
+            <li>📧 support@konned.com</li>
+            <li>📞 +1 (555) 123-4567</li>
+            <li>📍 123 Learning Street, Knowledge City</li>
+          </ul>
+        </div>
+
+      </div>
+
+      <div
+        class="border-t border-slate-700 mt-16 pt-8 flex flex-col md:flex-row justify-between items-center text-sm text-gray-400 gap-4">
+        <p>© 2026 Konned. All rights reserved.</p>
+
+        <div class="flex gap-6">
+          <a class="hover:text-white cursor-pointer transition">Privacy Policy</a>
+          <a class="hover:text-white cursor-pointer transition">Terms of Service</a>
+          <a class="hover:text-white cursor-pointer transition">Cookie Policy</a>
+        </div>
+      </div>
+
+    </div>
+  </footer>
+
+</body>
+
+</html>

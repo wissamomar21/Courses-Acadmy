@@ -1,0 +1,610 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="light">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>UX Design Fundamentals - Course Player - Konned</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.10/dist/full.min.css" rel="stylesheet" type="text/css" />
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primaryBlue: "#3B82F6"
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    body {
+      font-family: system-ui, -apple-system, sans-serif;
+    }
+
+    .video-container {
+      position: relative;
+      padding-bottom: 56.25%;
+      height: 0;
+      overflow: hidden;
+      background: #000;
+    }
+
+    .video-container iframe,
+    .video-container video {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+
+    .playlist-item:hover {
+      background-color: rgba(59, 130, 246, 0.1);
+    }
+
+    .playlist-item.active {
+      background-color: rgba(59, 130, 246, 0.15);
+      border-left: 4px solid #3B82F6;
+    }
+
+    .custom-scrollbar::-webkit-scrollbar {
+      width: 8px;
+    }
+
+    .custom-scrollbar::-webkit-scrollbar-track {
+      background: #f1f1f1;
+      border-radius: 10px;
+    }
+
+    .custom-scrollbar::-webkit-scrollbar-thumb {
+      background: #3B82F6;
+      border-radius: 10px;
+    }
+
+    .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+      background: #2563EB;
+    }
+  </style>
+</head>
+
+<body class="bg-base-100">
+
+  <div class="navbar bg-base-100 px-4 sm:px-6 lg:px-10 shadow-sm fixed top-0 left-0 w-full z-50">
+    <div class="navbar-start">
+      <div class="dropdown lg:hidden">
+        <label tabindex="0" class="btn btn-ghost btn-circle">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h7" />
+          </svg>
+        </label>
+        <ul tabindex="0" class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="all-courses.html">All Courses</a></li>
+          <li><a class="text-primaryBlue font-medium">My Courses</a></li>
+          <li><a>About Us</a></li>
+          <li><a>Contact</a></li>
+        </ul>
+      </div>
+
+      <a href="index.html" class="flex items-center gap-2">
+        <div class="w-9 h-9 bg-primaryBlue text-white rounded-lg flex items-center justify-center font-bold text-lg">
+          K
+        </div>
+        <span class="font-semibold text-lg sm:text-xl">konned</span>
+      </a>
+    </div>
+
+    <div class="navbar-center hidden lg:flex">
+      <ul class="menu menu-horizontal px-1 gap-2 font-medium">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="all-courses.html">All Courses</a></li>
+        <li><a class="text-primaryBlue border-b-2 border-primaryBlue rounded-none">My Courses</a></li>
+        <li><a>About Us</a></li>
+        <li><a>Contact</a></li>
+      </ul>
+    </div>
+
+    <div class="navbar-end gap-2 sm:gap-4">
+      <div class="indicator">
+        <span class="indicator-item badge badge-error badge-xs"></span>
+        <button class="btn btn-ghost btn-circle btn-sm sm:btn-md">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9" />
+          </svg>
+        </button>
+      </div>
+
+      <button class="w-8 h-8 sm:w-10 sm:h-10 rounded-full overflow-hidden ring-2 ring-offset-2 ring-primaryBlue">
+        <a href="profile.html">
+          <img src="images/profile-photo.png" alt="User" class="w-full h-full object-cover">
+        </a>
+      </button>
+    </div>
+  </div>
+  <div class="pt-20"></div>
+
+  <section class="px-4 sm:px-6 lg:px-10 py-6">
+    <div class="max-w-[1800px] mx-auto">
+
+      <div class="breadcrumbs text-sm mb-4">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="all-courses.html">My Courses</a></li>
+          <li><a href="course-details.html">UX Design Fundamentals</a></li>
+          <li>Section 1</li>
+        </ul>
+      </div>
+
+      <div class="grid lg:grid-cols-[1fr_400px] xl:grid-cols-[1fr_450px] gap-6">
+
+        <div class="space-y-6">
+
+          <div class="bg-base-100 rounded-2xl shadow-xl overflow-hidden">
+            <div class="video-container">
+              <video controls class="w-full" poster="https://images.unsplash.com/photo-1559027615-cd4628902d4a?q=80&w=1200">
+                <source src="sample-video.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+              </video>
+            </div>
+          </div>
+
+          <div class="bg-base-100 rounded-2xl shadow-lg p-6">
+            <div class="flex flex-wrap items-center justify-between gap-4 mb-4">
+              <div>
+                <div class="flex items-center gap-2 mb-2">
+                  <div class="badge badge-outline">Section 1</div>
+                  <div class="badge badge-success">Lesson 1</div>
+                </div>
+                <h1 class="text-2xl lg:text-3xl font-bold">What is UX Design?</h1>
+              </div>
+              <div class="flex gap-2">
+                <button class="btn btn-circle btn-outline">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                  </svg>
+                </button>
+                <button class="btn btn-circle btn-outline">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 5a2 2 0 012-2h10a2 2 0 012 2v16l-7-3.5L5 21V5z" />
+                  </svg>
+                </button>
+              </div>
+            </div>
+
+            <div class="flex items-center gap-6 text-sm text-gray-600 mb-6">
+              <div class="flex items-center gap-2">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+                <span>8:30</span>
+              </div>
+              <div class="flex items-center gap-2">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+                </svg>
+                <span>1,234 views</span>
+              </div>
+            </div>
+
+            <div class="divider"></div>
+
+            <div class="mb-6">
+              <h3 class="font-semibold text-lg mb-3">About this lesson</h3>
+              <p class="text-gray-700 leading-relaxed">
+                In this introductory lesson, you'll learn the fundamental concepts of UX design. We'll explore what UX design really means,
+                why it's important for digital products, and how it differs from other design disciplines. You'll gain a solid understanding
+                of the core principles that will guide you throughout this course.
+              </p>
+            </div>
+
+            <div class="flex flex-wrap gap-3">
+              <button class="btn btn-outline flex-1 sm:flex-none">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+                </svg>
+                Previous
+              </button>
+              <button class="btn btn-primary flex-1 sm:flex-none">
+                Next Lesson
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                </svg>
+              </button>
+            </div>
+          </div>
+
+          <div class="bg-base-100 rounded-2xl shadow-lg p-6">
+            <div role="tablist" class="tabs tabs-boxed bg-base-200 mb-6">
+              <a role="tab" class="tab tab-active">Overview</a>
+              <a role="tab" class="tab">Resources</a>
+              <a role="tab" class="tab">Notes</a>
+              <a role="tab" class="tab">Q&A</a>
+            </div>
+
+            <div class="space-y-4">
+              <div>
+                <h3 class="font-semibold text-lg mb-3">Lesson Resources</h3>
+                <div class="space-y-2">
+                  <div class="flex items-center justify-between p-4 bg-base-200 rounded-lg hover:bg-base-300 cursor-pointer transition">
+                    <div class="flex items-center gap-3">
+                      <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-primaryBlue" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z" />
+                      </svg>
+                      <div>
+                        <div class="font-medium">UX Design Introduction.pdf</div>
+                        <div class="text-sm text-gray-500">2.4 MB</div>
+                      </div>
+                    </div>
+                    <button class="btn btn-sm btn-ghost">
+                      <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+                      </svg>
+                    </button>
+                  </div>
+
+                  <div class="flex items-center justify-between p-4 bg-base-200 rounded-lg hover:bg-base-300 cursor-pointer transition">
+                    <div class="flex items-center gap-3">
+                      <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-primaryBlue" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" />
+                      </svg>
+                      <div>
+                        <div class="font-medium">Additional Reading Resources</div>
+                        <div class="text-sm text-gray-500">External link</div>
+                      </div>
+                    </div>
+                    <button class="btn btn-sm btn-ghost">
+                      <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                      </svg>
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              <div class="divider"></div>
+
+              <div>
+                <h3 class="font-semibold text-lg mb-3">Course Progress</h3>
+                <div class="space-y-2">
+                  <div class="flex justify-between text-sm">
+                    <span>Overall Progress</span>
+                    <span class="font-medium">12%</span>
+                  </div>
+                  <progress class="progress progress-primary w-full" value="12" max="100"></progress>
+                  <div class="text-sm text-gray-500">5 of 45 lessons completed</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <div>
+          <div class="sticky top-24">
+            <div class="bg-base-100 rounded-2xl shadow-xl overflow-hidden">
+              <div class="bg-gradient-to-r from-primaryBlue to-blue-600 text-white p-4">
+                <h2 class="text-xl font-bold mb-2">Course Content</h2>
+                <div class="text-sm opacity-90">45 lessons • 8h 30m</div>
+              </div>
+
+              <div class="custom-scrollbar overflow-y-auto" style="max-height: calc(100vh - 250px);">
+
+                <div class="collapse collapse-arrow border-b border-base-200">
+                  <input type="radio" name="playlist-accordion" checked="checked" />
+                  <div class="collapse-title font-semibold bg-base-200">
+                    <div class="flex items-center justify-between pr-4">
+                      <span>Section 1: Introduction</span>
+                      <span class="text-xs text-gray-500">5 • 45m</span>
+                    </div>
+                  </div>
+                  <div class="collapse-content p-0">
+                    <div class="playlist-item active flex items-center gap-3 p-4 cursor-pointer transition border-l-4 border-transparent">
+                      <div class="flex-shrink-0">
+                        <div class="w-16 h-12 rounded overflow-hidden bg-base-200 flex items-center justify-center">
+                          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-primaryBlue" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M8 5v14l11-7z" />
+                          </svg>
+                        </div>
+                      </div>
+                      <div class="flex-1 min-w-0">
+                        <div class="font-medium text-sm mb-1 truncate">What is UX Design?</div>
+                        <div class="flex items-center gap-2 text-xs text-gray-500">
+                          <span>8:30</span>
+                          <span>•</span>
+                          <span class="text-green-500">✓ Completed</span>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="playlist-item flex items-center gap-3 p-4 cursor-pointer transition border-l-4 border-transparent">
+                      <div class="flex-shrink-0">
+                        <div class="w-16 h-12 rounded overflow-hidden bg-base-200">
+                          <img src="https://images.unsplash.com/photo-1559027615-cd4628902d4a?q=80&w=100" class="w-full h-full object-cover" />
+                        </div>
+                      </div>
+                      <div class="flex-1 min-w-0">
+                        <div class="font-medium text-sm mb-1 truncate">UX Design Process Overview</div>
+                        <div class="flex items-center gap-2 text-xs text-gray-500">
+                          <span>12:15</span>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="playlist-item flex items-center gap-3 p-4 cursor-pointer transition border-l-4 border-transparent opacity-60">
+                      <div class="flex-shrink-0">
+                        <div class="w-16 h-12 rounded overflow-hidden bg-base-200">
+                          <img src="https://images.unsplash.com/photo-1559027615-cd4628902d4a?q=80&w=100" class="w-full h-full object-cover" />
+                        </div>
+                      </div>
+                      <div class="flex-1 min-w-0">
+                        <div class="font-medium text-sm mb-1 truncate">The Role of a UX Designer</div>
+                        <div class="flex items-center gap-2 text-xs text-gray-500">
+                          <span>🔒</span>
+                          <span>10:20</span>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="playlist-item flex items-center gap-3 p-4 cursor-pointer transition border-l-4 border-transparent opacity-60">
+                      <div class="flex-shrink-0">
+                        <div class="w-16 h-12 rounded overflow-hidden bg-base-200">
+                          <img src="https://images.unsplash.com/photo-1559027615-cd4628902d4a?q=80&w=100" class="w-full h-full object-cover" />
+                        </div>
+                      </div>
+                      <div class="flex-1 min-w-0">
+                        <div class="font-medium text-sm mb-1 truncate">UX vs UI Design</div>
+                        <div class="flex items-center gap-2 text-xs text-gray-500">
+                          <span>🔒</span>
+                          <span>9:45</span>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="playlist-item flex items-center gap-3 p-4 cursor-pointer transition border-l-4 border-transparent opacity-60">
+                      <div class="flex-shrink-0">
+                        <div class="w-16 h-12 rounded overflow-hidden bg-base-200 flex items-center justify-center">
+                          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                          </svg>
+                        </div>
+                      </div>
+                      <div class="flex-1 min-w-0">
+                        <div class="font-medium text-sm mb-1 truncate">Getting Started with Tools</div>
+                        <div class="flex items-center gap-2 text-xs text-gray-500">
+                          <span>📄</span>
+                          <span>Article</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="collapse collapse-arrow border-b border-base-200">
+                  <input type="radio" name="playlist-accordion" />
+                  <div class="collapse-title font-semibold">
+                    <div class="flex items-center justify-between pr-4">
+                      <span>Section 2: User Research</span>
+                      <span class="text-xs text-gray-500">6 • 1h 10m</span>
+                    </div>
+                  </div>
+                  <div class="collapse-content p-0">
+                    <div class="playlist-item flex items-center gap-3 p-4 cursor-pointer transition border-l-4 border-transparent opacity-60">
+                      <div class="flex-shrink-0">
+                        <div class="w-16 h-12 rounded overflow-hidden bg-base-200">
+                          <img src="https://images.unsplash.com/photo-1559027615-cd4628902d4a?q=80&w=100" class="w-full h-full object-cover" />
+                        </div>
+                      </div>
+                      <div class="flex-1 min-w-0">
+                        <div class="font-medium text-sm mb-1 truncate">Understanding Your Users</div>
+                        <div class="flex items-center gap-2 text-xs text-gray-500">
+                          <span>🔒</span>
+                          <span>11:30</span>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="playlist-item flex items-center gap-3 p-4 cursor-pointer transition border-l-4 border-transparent opacity-60">
+                      <div class="flex-shrink-0">
+                        <div class="w-16 h-12 rounded overflow-hidden bg-base-200">
+                          <img src="https://images.unsplash.com/photo-1559027615-cd4628902d4a?q=80&w=100" class="w-full h-full object-cover" />
+                        </div>
+                      </div>
+                      <div class="flex-1 min-w-0">
+                        <div class="font-medium text-sm mb-1 truncate">Conducting User Interviews</div>
+                        <div class="flex items-center gap-2 text-xs text-gray-500">
+                          <span>🔒</span>
+                          <span>15:20</span>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="playlist-item flex items-center gap-3 p-4 cursor-pointer transition border-l-4 border-transparent opacity-60">
+                      <div class="flex-shrink-0">
+                        <div class="w-16 h-12 rounded overflow-hidden bg-base-200">
+                          <img src="https://images.unsplash.com/photo-1559027615-cd4628902d4a?q=80&w=100" class="w-full h-full object-cover" />
+                        </div>
+                      </div>
+                      <div class="flex-1 min-w-0">
+                        <div class="font-medium text-sm mb-1 truncate">Creating User Personas</div>
+                        <div class="flex items-center gap-2 text-xs text-gray-500">
+                          <span>🔒</span>
+                          <span>13:45</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="collapse collapse-arrow border-b border-base-200">
+                  <input type="radio" name="playlist-accordion" />
+                  <div class="collapse-title font-semibold">
+                    <div class="flex items-center justify-between pr-4">
+                      <span>Section 3: Information Architecture</span>
+                      <span class="text-xs text-gray-500">5 • 55m</span>
+                    </div>
+                  </div>
+                  <div class="collapse-content p-0">
+                    <div class="p-4 text-sm text-gray-500">Complete previous sections to unlock</div>
+                  </div>
+                </div>
+
+                <div class="collapse collapse-arrow border-b border-base-200">
+                  <input type="radio" name="playlist-accordion" />
+                  <div class="collapse-title font-semibold">
+                    <div class="flex items-center justify-between pr-4">
+                      <span>Section 4: Wireframing & Prototyping</span>
+                      <span class="text-xs text-gray-500">8 • 1h 40m</span>
+                    </div>
+                  </div>
+                  <div class="collapse-content p-0">
+                    <div class="p-4 text-sm text-gray-500">Complete previous sections to unlock</div>
+                  </div>
+                </div>
+
+                <div class="collapse collapse-arrow border-b border-base-200">
+                  <input type="radio" name="playlist-accordion" />
+                  <div class="collapse-title font-semibold">
+                    <div class="flex items-center justify-between pr-4">
+                      <span>Section 5: Visual Design</span>
+                      <span class="text-xs text-gray-500">7 • 1h 20m</span>
+                    </div>
+                  </div>
+                  <div class="collapse-content p-0">
+                    <div class="p-4 text-sm text-gray-500">Complete previous sections to unlock</div>
+                  </div>
+                </div>
+
+                <div class="collapse collapse-arrow border-b border-base-200">
+                  <input type="radio" name="playlist-accordion" />
+                  <div class="collapse-title font-semibold">
+                    <div class="flex items-center justify-between pr-4">
+                      <span>Section 6: Usability Testing</span>
+                      <span class="text-xs text-gray-500">6 • 1h 5m</span>
+                    </div>
+                  </div>
+                  <div class="collapse-content p-0">
+                    <div class="p-4 text-sm text-gray-500">Complete previous sections to unlock</div>
+                  </div>
+                </div>
+
+                <div class="collapse collapse-arrow border-b border-base-200">
+                  <input type="radio" name="playlist-accordion" />
+                  <div class="collapse-title font-semibold">
+                    <div class="flex items-center justify-between pr-4">
+                      <span>Section 7: Design Systems</span>
+                      <span class="text-xs text-gray-500">5 • 50m</span>
+                    </div>
+                  </div>
+                  <div class="collapse-content p-0">
+                    <div class="p-4 text-sm text-gray-500">Complete previous sections to unlock</div>
+                  </div>
+                </div>
+
+                <div class="collapse collapse-arrow">
+                  <input type="radio" name="playlist-accordion" />
+                  <div class="collapse-title font-semibold">
+                    <div class="flex items-center justify-between pr-4">
+                      <span>Section 8: Portfolio & Career</span>
+                      <span class="text-xs text-gray-500">3 • 35m</span>
+                    </div>
+                  </div>
+                  <div class="collapse-content p-0">
+                    <div class="p-4 text-sm text-gray-500">Complete previous sections to unlock</div>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <footer class="bg-gradient-to-r from-slate-900 to-slate-800 text-gray-300 px-4 sm:px-6 lg:px-10 pt-16 lg:pt-20 pb-8 mt-12">
+    <div class="max-w-7xl mx-auto">
+
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-10">
+
+        <div>
+          <div class="flex items-center gap-3 mb-6">
+            <div class="w-10 h-10 bg-blue-600 rounded-lg flex items-center justify-center text-white font-bold">
+              K
+            </div>
+            <span class="text-xl font-semibold text-white">konned</span>
+          </div>
+
+          <p class="text-gray-400 leading-relaxed">
+            We provide high-quality online courses to help you grow your skills and advance your career.
+            Learn from top instructors worldwide.
+          </p>
+        </div>
+
+        <div>
+          <h4 class="text-white font-semibold mb-6 text-lg">Quick Links</h4>
+          <ul class="space-y-3">
+            <li><a href="index.html" class="hover:text-white cursor-pointer transition">Home</a></li>
+            <li><a href="all-courses.html" class="hover:text-white cursor-pointer transition">All Courses</a></li>
+            <li><a class="hover:text-white cursor-pointer transition">My Courses</a></li>
+            <li><a class="hover:text-white cursor-pointer transition">About Us</a></li>
+            <li><a class="hover:text-white cursor-pointer transition">Contact</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="text-white font-semibold mb-6 text-lg">Categories</h4>
+          <ul class="space-y-3">
+            <li class="hover:text-white cursor-pointer transition">Design</li>
+            <li class="hover:text-white cursor-pointer transition">Programming</li>
+            <li class="hover:text-white cursor-pointer transition">Marketing</li>
+            <li class="hover:text-white cursor-pointer transition">Business</li>
+            <li class="hover:text-white cursor-pointer transition">Photography</li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="text-white font-semibold mb-6 text-lg">Contact Info</h4>
+          <ul class="space-y-4">
+            <li>📧 support@konned.com</li>
+            <li>📞 +1 (555) 123-4567</li>
+            <li>📍 123 Learning Street, Knowledge City</li>
+          </ul>
+        </div>
+
+      </div>
+
+      <div
+        class="border-t border-slate-700 mt-16 pt-8 flex flex-col md:flex-row justify-between items-center text-sm text-gray-400 gap-4">
+        <p>© 2026 Konned. All rights reserved.</p>
+
+        <div class="flex gap-6">
+          <a class="hover:text-white cursor-pointer transition">Privacy Policy</a>
+          <a class="hover:text-white cursor-pointer transition">Terms of Service</a>
+          <a class="hover:text-white cursor-pointer transition">Cookie Policy</a>
+        </div>
+      </div>
+
+    </div>
+  </footer>
+
+  <script>
+    const playlistItems = document.querySelectorAll('.playlist-item:not(.opacity-60)');
+    playlistItems.forEach(item => {
+      item.addEventListener('click', () => {
+        document.querySelector('.playlist-item.active')?.classList.remove('active');
+        item.classList.add('active');
+      });
+    });
+  </script>
+
+</body>
+
+</html>
